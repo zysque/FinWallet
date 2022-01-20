@@ -61,16 +61,36 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(24, 24, 0, 20),
+                        padding: EdgeInsetsDirectional.fromSTEB(24, 24, 24, 0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Image.asset(
-                              'assets/images/finWallet_logo_landscape.png',
-                              width: 170,
-                              height: 60,
+                              'assets/images/Logo.png',
+                              width: 325,
+                              height: 90,
                               fit: BoxFit.fitWidth,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 25),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
+                              child: Text(
+                                'Saamarth City',
+                                style: FlutterFlowTheme.title2.override(
+                                  fontFamily: 'Lexend Deca',
+                                  color: Color(0xFF860096),
+                                  fontSize: 35,
+                                ),
+                              ),
                             ),
                           ],
                         ),
@@ -81,71 +101,45 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Text(
-                                    'Get Started',
-                                    style: FlutterFlowTheme.title1,
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Text(
-                                      'Create your account below.',
-                                      style: FlutterFlowTheme.subtitle1,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                                child: TextFormField(
-                                  controller: emailAddressLoginController,
-                                  obscureText: false,
-                                  decoration: InputDecoration(
-                                    labelText: 'Email Address',
-                                    labelStyle:
-                                        FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: Color(0x98FFFFFF),
-                                    ),
-                                    hintText: 'Enter your email...',
-                                    hintStyle:
-                                        FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: Color(0x98FFFFFF),
-                                    ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0x00000000),
-                                        width: 1,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0x00000000),
-                                        width: 1,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8),
-                                    ),
-                                    filled: true,
-                                    fillColor: FlutterFlowTheme.darkBackground,
-                                    contentPadding:
-                                        EdgeInsetsDirectional.fromSTEB(
-                                            20, 24, 20, 24),
-                                  ),
-                                  style: FlutterFlowTheme.bodyText1.override(
+                              TextFormField(
+                                controller: emailAddressLoginController,
+                                obscureText: false,
+                                decoration: InputDecoration(
+                                  labelText: 'Email Address',
+                                  labelStyle:
+                                      FlutterFlowTheme.bodyText1.override(
                                     fontFamily: 'Lexend Deca',
-                                    color: FlutterFlowTheme.textColor,
+                                    color: Color(0x98FFFFFF),
                                   ),
+                                  hintText: 'Enter your email...',
+                                  hintStyle:
+                                      FlutterFlowTheme.bodyText1.override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0x98FFFFFF),
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0x00000000),
+                                      width: 1,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0x00000000),
+                                      width: 1,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  filled: true,
+                                  fillColor: FlutterFlowTheme.darkBackground,
+                                  contentPadding:
+                                      EdgeInsetsDirectional.fromSTEB(
+                                          20, 24, 20, 24),
+                                ),
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'Lexend Deca',
+                                  color: FlutterFlowTheme.textColor,
                                 ),
                               ),
                               Padding(
@@ -301,7 +295,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          'Don\'t have an account?',
+                                          'Don\'t have account?',
+                                          textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.bodyText1,
                                         ),
                                         FFButtonWidget(
@@ -348,7 +343,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             final user = await signInAnonymously(context);
@@ -371,7 +366,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               (r) => false,
                             );
                           },
-                          text: 'Continue as Guest',
+                          text: 'Continue as Admin',
                           options: FFButtonOptions(
                             width: 230,
                             height: 50,

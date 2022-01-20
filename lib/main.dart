@@ -9,10 +9,13 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:fin_wallet_s1/login_page/login_page_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'm_y_card/m_y_card_widget.dart';
 import 'm_y_budgets/m_y_budgets_widget.dart';
 import 'm_y_profile_page/m_y_profile_page_widget.dart';
+import 'my_hierarchy/my_hierarchy_widget.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -105,55 +108,52 @@ class _NavBarPageState extends State<NavBarPage> {
       'MY_Card': MYCardWidget(),
       'MY_Budgets': MYBudgetsWidget(),
       'MY_profilePage': MYProfilePageWidget(),
+      'MyHierarchy': MyHierarchyWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPage);
     return Scaffold(
       body: tabs[_currentPage],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currentIndex,
-        onTap: (i) => setState(() => _currentPage = tabs.keys.toList()[i]),
+      bottomNavigationBar: GNav(
+        selectedIndex: currentIndex,
+        onTabChange: (i) =>
+            setState(() => _currentPage = tabs.keys.toList()[i]),
         backgroundColor: FlutterFlowTheme.darkBackground,
-        selectedItemColor: FlutterFlowTheme.primaryColor,
-        unselectedItemColor: FlutterFlowTheme.grayLight,
-        showSelectedLabels: true,
-        showUnselectedLabels: false,
-        type: BottomNavigationBarType.fixed,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.credit_card,
-              size: 24,
-            ),
-            activeIcon: FaIcon(
-              FontAwesomeIcons.solidCreditCard,
-              size: 20,
-            ),
-            label: '•',
-            tooltip: '',
+        color: FlutterFlowTheme.grayLight,
+        activeColor: FlutterFlowTheme.primaryColor,
+        tabBackgroundColor: Color(0x00000000),
+        tabBorderRadius: 100,
+        tabMargin: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+        gap: 0,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        duration: Duration(milliseconds: 500),
+        haptic: false,
+        tabs: [
+          GButton(
+            icon: currentIndex == 0
+                ? FontAwesomeIcons.solidCreditCard
+                : Icons.credit_card,
+            text: '•',
+            iconSize: 24,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.stacked_line_chart_rounded,
-              size: 24,
-            ),
-            activeIcon: Icon(
-              Icons.stacked_line_chart_rounded,
-              size: 24,
-            ),
-            label: '•',
-            tooltip: '',
+          GButton(
+            icon: currentIndex == 1
+                ? Icons.stacked_line_chart_rounded
+                : Icons.stacked_line_chart_rounded,
+            text: '•',
+            iconSize: 24,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.account_circle_outlined,
-              size: 24,
-            ),
-            activeIcon: Icon(
-              Icons.account_circle_rounded,
-              size: 24,
-            ),
-            label: '•',
-            tooltip: '',
+          GButton(
+            icon: currentIndex == 2
+                ? Icons.account_circle_rounded
+                : Icons.account_circle_outlined,
+            text: '•',
+            iconSize: 24,
+          ),
+          GButton(
+            icon: FontAwesomeIcons.artstation,
+            text: '',
+            iconSize: 24,
           )
         ],
       ),

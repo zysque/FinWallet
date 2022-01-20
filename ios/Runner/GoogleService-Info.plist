@@ -3,23 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>180463640197-njukg0ftctm67shh0ta0riq9q1q54bep.apps.googleusercontent.com</string>
+	<string>408524502737-t6icj28hi9gp95p8mhbu0jo5ttsea9mb.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.180463640197-njukg0ftctm67shh0ta0riq9q1q54bep</string>
-	<key>ANDROID_CLIENT_ID</key>
-	<string>180463640197-6jiucovljbi9vf5spsbltnuql81d8ok5.apps.googleusercontent.com</string>
+	<string>com.googleusercontent.apps.408524502737-t6icj28hi9gp95p8mhbu0jo5ttsea9mb</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBqtso5rVxqdEYavYUpV5HH4zy2sAv9KbQ</string>
+	<string>AIzaSyCe257-W7QCti-PdW0isxwcaNjAE4BqifM</string>
 	<key>GCM_SENDER_ID</key>
-	<string>180463640197</string>
+	<string>408524502737</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.flutterflow.finwallet</string>
 	<key>PROJECT_ID</key>
-	<string>finance-app-32589</string>
+	<string>finwallet-67858</string>
 	<key>STORAGE_BUCKET</key>
-	<string>finance-app-32589.appspot.com</string>
+	<string>finwallet-67858.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:180463640197:ios:213a9d1fd5cb3b3a90d3ec</string>
+	<string>1:408524502737:ios:2af7f2cb96d43791de77f0</string>
 </dict>
 </plist>

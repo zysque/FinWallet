@@ -57,7 +57,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
               children: [
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  height: 200,
+                  height: 280,
                   decoration: BoxDecoration(
                     boxShadow: [
                       BoxShadow(
@@ -80,7 +80,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -96,14 +96,14 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       2, 2, 2, 2),
                                   child: Container(
-                                    width: 60,
-                                    height: 60,
+                                    width: 80,
+                                    height: 80,
                                     clipBehavior: Clip.antiAlias,
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                     ),
-                                    child: Image.asset(
-                                      'assets/images/avatar.png',
+                                    child: Image.network(
+                                      mYProfilePageUsersRecord.photoUrl,
                                     ),
                                   ),
                                 ),
@@ -159,6 +159,14 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
+                              Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                child: Text(
+                                  mYProfilePageUsersRecord.userTitle,
+                                  style: FlutterFlowTheme.title3,
+                                ),
+                              ),
                               Text(
                                 valueOrDefault<String>(
                                   mYProfilePageUsersRecord.displayName,
@@ -174,24 +182,60 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                           children: [
                             Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
+                                  EdgeInsetsDirectional.fromSTEB(4, 8, 0, 0),
                               child: Text(
-                                valueOrDefault<String>(
-                                  mYProfilePageUsersRecord.userTitle,
-                                  'Badass Busybody',
-                                ),
+                                mYProfilePageUsersRecord.dob,
                                 style: FlutterFlowTheme.bodyText1.override(
                                   fontFamily: 'Lexend Deca',
-                                  color: Color(0xB3FFFFFF),
+                                  color: FlutterFlowTheme.textColor,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
                             ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(4, 8, 0, 0),
+                              child: Text(
+                                mYProfilePageUsersRecord.phoneNumber,
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'Lexend Deca',
+                                  color: FlutterFlowTheme.textColor,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
                             Padding(
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(4, 8, 0, 0),
                               child: Text(
                                 mYProfilePageUsersRecord.email,
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'Lexend Deca',
+                                  color: FlutterFlowTheme.textColor,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(4, 8, 0, 0),
+                              child: Text(
+                                mYProfilePageUsersRecord.address,
                                 style: FlutterFlowTheme.bodyText1.override(
                                   fontFamily: 'Lexend Deca',
                                   color: FlutterFlowTheme.textColor,

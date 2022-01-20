@@ -7,6 +7,9 @@ import 'transaction_categories_record.dart';
 import 'budgets_record.dart';
 import 'user_list_record.dart';
 import 'budget_list_record.dart';
+import 'user_heirarchies_record.dart';
+import 'delinked_user_record.dart';
+import 'child_hierarchy_record.dart';
 
 import 'index.dart';
 
@@ -24,6 +27,9 @@ const kDocumentReferenceField = 'Document__Reference__Field';
   BudgetsRecord,
   UserListRecord,
   BudgetListRecord,
+  UserHeirarchiesRecord,
+  DelinkedUserRecord,
+  ChildHierarchyRecord,
 ])
 final Serializers serializers = (_$serializers.toBuilder()
       ..add(DocumentReferenceSerializer())
